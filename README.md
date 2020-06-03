@@ -33,3 +33,27 @@ https://web.archive.org/web/20161013232730/http://yann.regis-gianas.org/public/m
 I know for Elm, using the Union Find algorithm is really important for performance of global inference on files of 500+ lines. I don’t think I implemented this for about two years, until programs started getting longer in practice, but I bring this up because Union Find requires mutation for the fastest implementation. I don’t know enough about your language to know exactly if you need that, but you may need to use a language like OCaml or Haskell to do that specific optimization. Languages like Scala cannot use Union Find too much because it does not work so well with OO-style sub-typing, so they have to do other things to try to improve performance. Point is, you can get by without, but I’m not personally an expert on what is needed outside of HM(=). I hope that is helpful information!
 
 I also ran into a really impressive language called [Lucid Synchrone](https://www.di.ens.fr/~pouzet/bib/chap_lucid_synchrone_english_iste08.pdf) many years ago, and I recommend reading through that paper! I recall being really impressed that they had used a highly constrained “reactive system” to get really solid and practical proofs about cycle counts and maximum hardware necessary for a given program, but it’s been 6 or 7 years since I’ve read it myself!
+
+# Implement Higher Order Functions in imperative languages
+
+# Closure Conversion
+
+Implement nested functions by making closures and hoist all functions to the top level. Closures is made up of the function and its environment (the variables it references).
+
+[Slides by Michel Schinz](http://lampwww.epfl.ch/teaching/archive/advanced_compiler/2007/resources/slides/act-2007-05-closure-conversion.pdf)
+
+# Defunctionalization
+
+Compile higher order functions into first order functions. Typically followed closure conversions which handles any free variables.
+
+[Wikipedia page](https://www.wikiwand.com/en/Defunctionalization)
+
+[A practical example](https://blog.sigplan.org/2019/12/30/defunctionalization-everybody-does-it-nobody-talks-about-it/)
+
+# Upvalues
+
+You can also implement closures at the Virtual Machine level following Lua 5.x's approach.
+
+[Crafting Interpreters' Closure implementation](https://craftinginterpreters.com/closures.html)
+
+[Closure in Lua](https://pdfs.semanticscholar.org/73a2/e3c03f799956aa5a3188e4eb35c90977a471.pdf)

@@ -36,13 +36,13 @@ I also ran into a really impressive language called [Lucid Synchrone](https://ww
 
 # Implement Higher Order Functions in imperative languages
 
-# Closure Conversion
+## Closure Conversion
 
 Implement nested functions by making closures and hoist all functions to the top level. Closures is made up of the function and its environment (the variables it references).
 
 [Slides by Michel Schinz](http://lampwww.epfl.ch/teaching/archive/advanced_compiler/2007/resources/slides/act-2007-05-closure-conversion.pdf)
 
-# Defunctionalization
+## Defunctionalization
 
 Compile higher order functions into first order functions. Typically followed closure conversions which handles any free variables.
 
@@ -50,10 +50,18 @@ Compile higher order functions into first order functions. Typically followed cl
 
 [A practical example](https://blog.sigplan.org/2019/12/30/defunctionalization-everybody-does-it-nobody-talks-about-it/)
 
-# Upvalues
+## Upvalues
 
 You can also implement closures at the Virtual Machine level following Lua 5.x's approach.
 
 [Crafting Interpreters' Closure implementation](https://craftinginterpreters.com/closures.html)
 
 [Closure in Lua](https://pdfs.semanticscholar.org/73a2/e3c03f799956aa5a3188e4eb35c90977a471.pdf)
+
+# Garbage Collection
+
+Goethe University Frankfurt did a great job on giving a high-level overview of Garbage Collection concepts and techniques. Professor Christoph also go into the details of implementation of different GC algorithms. Here's three lecture videos:
+
+1. [Introduction to Memory Management](https://www.youtube.com/watch?v=SZ3xxTHeiVc)
+2. [Implementing Tracing Garbage Collectors](https://www.youtube.com/watch?v=0Vk5ZxQx7Ts&t=674s)
+3. [Copying Garbage Collection](https://www.youtube.com/watch?v=P1rU_9IB414&t=1s)
